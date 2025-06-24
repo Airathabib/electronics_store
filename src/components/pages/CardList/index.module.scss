@@ -1,0 +1,34 @@
+@import '../../styles/variables/_mixins';
+
+.CardList {
+  @include cardsWrapper;
+  max-width: 1680px;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  &Wrapper {
+    @include wrapper;
+  }
+}
+
+.PaginationWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+}
+.PaginationBtn {
+  @include PaginationBtn;
+}
+
+.error {
+  @include error;
+}
+
+.loading {
+  @include loading;
+}
+
+.ProductTitle {
+  @include productTitle;
+}

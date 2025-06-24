@@ -1,0 +1,51 @@
+@import '../../../components/styles/variables/mixins';
+.Admin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 3rem;
+  &Title {
+    @include titleH2;
+    color: var(--black-500);
+  }
+}
+
+.Form {
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3rem;
+}
+
+.FormItem {
+  display: flex;
+  flex-direction: column;
+  width: 100%; // Задаем ширину на 100% от родителя
+  gap: 0.5rem; // Расстояние между лейблом и инпутом
+}
+
+.FormItem label {
+  width: 100%; // Делаем лейбл на всю ширину
+  text-align: left; // Выравниваем текст по левому краю
+  margin-bottom: 0.5rem;
+}
+
+.Input {
+  width: 100%; // Делаем инпуты на всю ширину
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.Button {
+  width: 20%;
+	
+}
+
+// Дополнительно можно добавить стили для адаптивности
+@media (max-width: 768px) {
+  .Form {
+    width: 90vw;
+  }
+}

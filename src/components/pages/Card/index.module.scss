@@ -1,0 +1,304 @@
+@import '../../styles/variables/_mixins.scss';
+
+.Card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 20rem;
+  width: 20rem;
+  height: auto;
+  padding: 1.5rem 2rem;
+  border: 2px solid var(--border-primary);
+  box-shadow: 0px -2px 5px var(--black-primary);
+  background-color: var(--white-primary);
+  border-radius: var(--largeRadius);
+  -webkit-border-radius: var(--largeRadius);
+  -moz-border-radius: var(--largeRadius);
+  -ms-border-radius: var(--largeRadius);
+  -o-border-radius: var(--largeRadius);
+  cursor: pointer;
+  &Error {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    max-width: 20rem;
+    width: 20rem;
+    height: auto;
+    padding: 1.5rem 2rem;
+    border: 2px solid var(--border-critical);
+    box-shadow: 0px -2px 5px var(--border-focus);
+    background-color: var(--bg-primary);
+    border-radius: var(--largeRadius);
+    -webkit-border-radius: var(--largeRadius);
+    -moz-border-radius: var(--largeRadius);
+    -ms-border-radius: var(--largeRadius);
+    -o-border-radius: var(--largeRadius);
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  &Spin {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    max-width: 20rem;
+    height: auto;
+    width: 20rem;
+    padding: 1.5rem 2rem;
+    border: 2px solid var(--border-primary);
+    box-shadow: 0px -2px 5px var(--black-primary);
+    background-color: var(--bg-primary);
+    border-radius: var(--largeRadius);
+    -webkit-border-radius: var(--largeRadius);
+    -moz-border-radius: var(--largeRadius);
+    -ms-border-radius: var(--largeRadius);
+    -o-border-radius: var(--largeRadius);
+    pointer-events: none;
+    opacity: 0.5;
+    background-color: red;
+  }
+  &Id {
+    @include paragraph4;
+  }
+  &Title {
+    @include titleH3;
+    color: var(--black-600);
+  }
+  &Brand {
+    @include titleH5;
+  }
+  &Descr {
+    @include paragraph3;
+    color: var(--black-600);
+    display: -webkit-box;
+    line-clamp: 3;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  &Price {
+    @include paragraph4;
+    color: var(--black-600);
+    font-weight: 700;
+  }
+  &Date {
+    @include paragraph4;
+  }
+  &Time {
+    @include paragraph4;
+  }
+  &Rating {
+    @include paragraph4;
+  }
+  &Image {
+    display: block;
+    width: 12.5rem;
+    margin-top: auto;
+    height: 12.5rem;
+  }
+  &Quantity {
+    @include paragraph4;
+    color: var(--black-600);
+    &Error {
+      @include paragraph4;
+      color: var(--criticalActive);
+    }
+  }
+  &ButtonWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &BtnEdit {
+    border: none;
+    fill: transparent;
+    background-color: transparent;
+    cursor: pointer;
+    transition: color 0.3s ease, fill 0.3s ease;
+    -webkit-transition: color 0.3s ease, fill 0.3s ease;
+    -moz-transition: color 0.3s ease, fill 0.3s ease;
+    -ms-transition: color 0.3s ease, fill 0.3s ease;
+    -o-transition: color 0.3s ease, fill 0.3s ease;
+    &:hover {
+      color: var(--red-700);
+    }
+    &Active {
+      border: none;
+      fill: transparent;
+      background-color: transparent;
+      cursor: pointer;
+      transition: color 0.3s ease, fill 0.3s ease;
+      -webkit-transition: color 0.3s ease, fill 0.3s ease;
+      -moz-transition: color 0.3s ease, fill 0.3s ease;
+      -ms-transition: color 0.3s ease, fill 0.3s ease;
+      -o-transition: color 0.3s ease, fill 0.3s ease;
+      color: var(--red-700);
+      fill: var(--red-700);
+    }
+  }
+  &QuantityWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+  &Counter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    &Btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      border: 1px solid var(--purple-300);
+      background-color: var(--purple-200);
+      border-radius: var(--smallRadius);
+      -webkit-border-radius: var(--smallRadius);
+      -moz-border-radius: var(--smallRadius);
+      -ms-border-radius: var(--smallRadius);
+      -o-border-radius: var(--smallRadius);
+      cursor: pointer;
+      transition: color 0.3s ease, background0-color, 0.3s ease;
+      -webkit-transition: color 0.3s ease, background0-color, 0.3s ease;
+      -moz-transition: color 0.3s ease, background0-color, 0.3s ease;
+      -ms-transition: color 0.3s ease, background0-color, 0.3s ease;
+      -o-transition: color 0.3s ease, background0-color, 0.3s ease;
+      &:hover {
+        color: var(--link-text);
+        background-color: var(--purple-400);
+      }
+    }
+    &Count {
+      @include paragraph2;
+      color: var(--black-600);
+    }
+  }
+  &BtnAddtocart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    &:hover {
+      color: var(--accent-active);
+    }
+  }
+}
+
+.Form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.5rem;
+  background-color: var(--purple-300);
+  &Label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    &Title {
+      @include paragraph3;
+      cursor: pointer;
+      outline: none;
+      border: none;
+      background-color: transparent;
+      border-bottom: 1px solid var(--black-primary);
+    }
+    &Descr {
+      @include paragraph3;
+      cursor: pointer;
+      outline: none;
+      border: none;
+      background-color: transparent;
+      border-bottom: 1px solid var(--black-primary);
+    }
+    &Photo {
+      @include paragraph3;
+      cursor: pointer;
+      outline: none;
+      border: none;
+      background-color: transparent;
+      border-bottom: 1px solid var(--black-primary);
+    }
+  }
+  &Btn {
+    @include Btn;
+    background-color: var(--red-primary);
+    color: var(--white-primary);
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-out;
+    -webkit-transition: background-color 0.3s ease-in-out, color 0.3s ease-out;
+    -moz-transition: background-color 0.3s ease-in-out, color 0.3s ease-out;
+    -ms-transition: background-color 0.3s ease-in-out, color 0.3s ease-out;
+    -o-transition: background-color 0.3s ease-in-out, color 0.3s ease-out;
+
+    &:hover {
+      background-color: var(--red-700);
+      color: var(--white-500);
+      cursor: pointer;
+    }
+  }
+}
+.CardBtnMore {
+  width: 60%;
+  text-align: center;
+  @include paragraph3;
+  color: var(--link-text);
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  background-color: var(--link-bg);
+  text-decoration: none;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  -webkit-transition: color 0.3s ease, background-color 0.3s ease;
+  -moz-transition: color 0.3s ease, background-color 0.3s ease;
+  -ms-transition: color 0.3s ease, background-color 0.3s ease;
+  -o-transition: color 0.3s ease, background-color 0.3s ease;
+  border-radius: var(--largeRadius);
+  -webkit-border-radius: var(--largeRadius);
+  -moz-border-radius: var(--largeRadius);
+  -ms-border-radius: var(--largeRadius);
+  -o-border-radius: var(--largeRadius);
+  &:hover {
+    color: var(--purple-800);
+    background-color: transparent;
+    border-color: transparent;
+  }
+  &Active {
+    border: none;
+    fill: transparent;
+    background-color: transparent;
+    cursor: pointer;
+    transition: color 0.3s ease, fill 0.3s ease;
+    -webkit-transition: color 0.3s ease, fill 0.3s ease;
+    -moz-transition: color 0.3s ease, fill 0.3s ease;
+    -ms-transition: color 0.3s ease, fill 0.3s ease;
+    -o-transition: color 0.3s ease, fill 0.3s ease;
+    color: var(--link-hover);
+    fill: var(--link-hover);
+  }
+}
+.error {
+  @include paragraph10;
+  color: var(--red-primary);
+  text-transform: lowercase;
+}
+
+.InputLabel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  @include titleH4;
+  color: var(--black-400);
+}
+.InputDate {
+  @include paragraph7;
+  color: var(--black-600);
+  background-color: transparent;
+  border: none;
+  pointer-events: none;
+}

@@ -1,0 +1,46 @@
+@import '../../../components/styles/variables/mixins';
+
+.Cart {
+  @include cardsWrapper;
+  max-width: 1680px;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  &Header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    border: 1px solid var(--border-primary);
+  }
+  &Wrapper {
+    @include wrapper;
+  }
+  &Title {
+    @include titleH4;
+    text-align: center;
+  }
+  &List {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+.PaginationWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+}
+.PaginationBtn {
+  @include PaginationBtn;
+}
+
+.error {
+  @include error;
+}
+
+.loading {
+  @include loading;
+}

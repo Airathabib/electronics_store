@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+.inter {
+  font-family: 'Inter', serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.inter-bold {
+  font-family: 'Inter', serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+@mixin titleH1 {
+  font-family: 'Inter';
+  font-weight: bold;
+  font-size: 2.25rem;
+  word-spacing: 0.5rem;
+}
+
+@mixin titleH2 {
+  font-family: 'Inter';
+  font-weight: bold;
+  font-size: 2rem;
+  word-spacing: 0.5rem;
+}
+
+@mixin titleH3 {
+  font-family: 'Inter';
+  font-weight: bold;
+  font-size: 1.5rem;
+  word-spacing: 0.5rem;
+}
+
+@mixin titleH4 {
+  font-family: 'Inter';
+  font-weight: bold;
+  font-size: 1.125rem;
+  word-spacing: 0.5rem;
+}
+
+@mixin titleH5 {
+  font-family: 'Inter';
+  font-weight: bold;
+  font-size: 1rem;
+  word-spacing: 0.5rem;
+}
+
+@mixin paragraph1 {
+  font-family: 'Inter';
+  font-weight: medium;
+  font-size: 1.5rem;
+  word-spacing: 0.5rem;
+}
+
+@mixin paragraph2 {
+  font-family: 'Inter';
+  font-weight: medium;
+  font-size: 1.125rem;
+  word-spacing: 0.5rem;
+}
+
+@mixin paragraph3 {
+  font-weight: normal;
+  font-family: 'Inter';
+  font-size: 1rem;
+  word-spacing: 0.5rem;
+}
+
+@mixin paragraph4 {
+  font-family: 'Inter';
+  font-weight: medium;
+  font-size: 1rem;
+  word-spacing: 0.5rem;
+}
+
+@mixin paragraph5 {
+  font-family: 'Inter';
+  font-weight: normal;
+  font-size: 0.875rem;
+  word-spacing: 0.5rem;
+}
+
+@mixin paragraph6 {
+  font-family: 'Inter';
+  font-weight: medium;
+  font-size: 0.875rem;
+  word-spacing: 0.5rem;
+}
+
+@mixin paragraph7 {
+  font-family: 'Inter';
+  font-weight: normal;
+  font-size: 0.75rem;
+  word-spacing: 0.25rem;
+}
+
+@mixin paragraph8 {
+  font-family: 'Inter';
+  font-weight: medium;
+  font-size: 0.75rem;
+  word-spacing: 0.25rem;
+}
+
+@mixin paragraph9 {
+  font-family: 'Inter';
+  font-weight: normal;
+  font-size: 0.625rem;
+  word-spacing: 0.25rem;
+}
+
+@mixin paragraph10 {
+  font-family: 'Inter';
+  font-weight: medium;
+  font-size: 0.625rem;
+  word-spacing: 0.25rem;
+}
+
+@mixin Btn {
+  height: 2.5rem;
+  @include paragraph4;
+  border: none;
+  color: var(--white-primary);
+  border-radius: var(--mediumRadius);
+  -webkit-border-radius: var(--mediumRadius);
+  -moz-border-radius: var(--mediumRadius);
+  -ms-border-radius: var(--mediumRadius);
+  -o-border-radius: var(--mediumRadius);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  -webkit-transition: background-color 0.3s ease, color 0.3s ease;
+  -moz-transition: background-color 0.3s ease, color 0.3s ease;
+  -ms-transition: background-color 0.3s ease, color 0.3s ease;
+  -o-transition: background-color 0.3s ease, color 0.3s ease;
+}
+@mixin cardsWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding-bottom: 2rem;
+}
+@mixin wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: center;
+  gap: 1rem;
+}
+
+@mixin error {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  width: 100%;
+  @include titleH2;
+  color: var(--red-primary);
+}
+
+@mixin loading {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  height: 100vh;
+  @include titleH2;
+  color: var(--loader);
+}
+
+@mixin productTitle {
+  @include titleH2;
+  text-align: center;
+  margin: 0 auto;
+  color: var(--link-text);
+}
+
+@mixin PaginationBtn {
+  @include paragraph3;
+  color: var(--text-primary);
+  border: none;
+  padding: 0.5rem 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: transparent;
+  border-radius: var(--largeRadius);
+  transition: color 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+  &:not([disabled]):hover {
+    color: var(--link-text);
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+  }
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+}
+
+@mixin ProductCount {
+  position: absolute;
+  border: 1px solid var(--black-500);
+  background-color: var(--white-600);
+  color: var(--black-500);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  width: 1rem;
+  height: 1rem;
+  top: 1rem;
+  right: 0;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include paragraph8;
+  font-weight: 700;
+  color: var(--red-700);
+}

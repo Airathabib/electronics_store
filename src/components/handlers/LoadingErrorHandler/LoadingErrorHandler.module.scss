@@ -1,0 +1,9 @@
+@import '../../styles/variables/mixins';
+
+.loading {
+  @include loading;
+}
+
+.error {
+  @include error;
+}
