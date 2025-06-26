@@ -61,6 +61,7 @@ export type Cart = {
   addedToCart: boolean;
   accum: string;
   memory: string;
+  rating: number;
   photo?: string;
 };
 export type Comments = {

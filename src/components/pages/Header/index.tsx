@@ -27,7 +27,7 @@ const Header: React.FC = () => {
 
   const debouncedHandlerPrice = debounce(
     (key: string, value: string | null) => handleChangeFilters(key, value),
-    700
+    100
   ) as (key: string, value: string | null) => void;
 
   const options = data?.map((brand) => ({ label: brand, value: brand })) || [];
@@ -60,51 +60,55 @@ const Header: React.FC = () => {
               </li>
             </ul>
 
-            <div className={styles.HeaderFilter}>
-              <h3 className={styles.HeaderFilterTitle}>Бренд</h3>
-              <Form.Item name='brand' layout='vertical'>
-                {error && (
-                  <div className={styles.error}>Ошибка загрузки брендов</div>
-                )}
-                <Select
-                  onSelect={(value) => handleChangeFilters('q', value)}
-                  loading={isLoading}
-                  placeholder='Выберите бренд'
-                  options={options}
-                ></Select>
-              </Form.Item>
-            </div>
-
-            <div className={styles.HeaderFilter}>
-              <h3 className={styles.HeaderFilterTitle}>Цена</h3>
-              <Flex gap='middle'>
-                <Form.Item>
-                  <Input
-                    type='text'
-                    allowClear
-                    defaultValue={searchParams.get('price_gte') || ''}
-                    onChange={(e) =>
-                      debouncedHandlerPrice('price_gte', e.target.value)
-                    }
-                    onKeyDown={validateNumberInput}
-                    onInput={(e: React.ChangeEvent<HTMLInputElement>) => {
-                      e.target.value = e.target.value.replace(/[^\d]/g, '');
-                    }}
-                  />
-                  <Input
-                    type='text'
-                    allowClear
-                    defaultValue={searchParams.get('price_lte') || ''}
-                    onChange={(e) =>
-                      debouncedHandlerPrice('price_lte', e.target.value)
-                    }
-                    onKeyDown={validateNumberInput}
-                    onInput={(e: React.ChangeEvent<HTMLInputElement>) => {
-                      e.target.value = e.target.value.replace(/[^\d]/g, '');
-                    }}
-                  />
+            <div className={styles.HeaderWrapper}>
+              <div className={styles.HeaderFilter}>
+                <h3 className={styles.HeaderFilterTitle}>Бренд</h3>
+                <Form.Item name='brand' layout='vertical'>
+                  {error && (
+                    <div className={styles.error}>Ошибка загрузки брендов</div>
+                  )}
+                  <Select
+                    onSelect={(value) => handleChangeFilters('q', value)}
+                    loading={isLoading}
+                    placeholder='Выберите бренд'
+                    options={options}
+                  ></Select>
                 </Form.Item>
-              </Flex>
+              </div>
+
+              <div className={styles.HeaderFilter}>
+                <h3 className={styles.HeaderFilterTitle}>Цена</h3>
+                <Flex>
+                  <Form.Item>
+                    <div className={styles.HeaderFilterPrice}>
+                      <Input
+                        type='text'
+                        allowClear
+                        defaultValue={searchParams.get('price_gte') || ''}
+                        onChange={(e) =>
+                          debouncedHandlerPrice('price_gte', e.target.value)
+                        }
+                        onKeyDown={validateNumberInput}
+                        onInput={(e: React.ChangeEvent<HTMLInputElement>) => {
+                          e.target.value = e.target.value.replace(/[^\d]/g, '');
+                        }}
+                      />
+                      <Input
+                        type='text'
+                        allowClear
+                        defaultValue={searchParams.get('price_lte') || ''}
+                        onChange={(e) =>
+                          debouncedHandlerPrice('price_lte', e.target.value)
+                        }
+                        onKeyDown={validateNumberInput}
+                        onInput={(e: React.ChangeEvent<HTMLInputElement>) => {
+                          e.target.value = e.target.value.replace(/[^\d]/g, '');
+                        }}
+                      />
+                    </div>
+                  </Form.Item>
+                </Flex>
+              </div>
             </div>
           </Form>
         </Drawer>

@@ -8,9 +8,11 @@ import { Sort } from '../../features/Sort/Sort';
 import useFilteredList from '../../handlers/hooks/useFilteredList';
 import CategoryTitle from '../../features/CategoryTitle';
 import Pagination from '../../features/Pagination';
-import styles from './index.module.scss';
 import { CardContextType } from '../../interfaces/interface';
 import { Spin } from 'antd';
+import { LeftBtn } from '../../features/LeftBtn';
+import { RightBtn } from '../../features/RightBtn';
+import styles from './index.module.scss';
 
 const Cart: React.FC = () => {
   const { category, currentPage, firstCardIndex, lastCardIndex, paginate } =
@@ -22,6 +24,7 @@ const Cart: React.FC = () => {
 
   const currentCards = filteredArr.slice(firstCardIndex, lastCardIndex);
 
+
   const productCount = cart.reduce((acc, product) => acc + product.quantity, 0);
   const totalPrice = cart.reduce(
     (acc, product) => acc + product.price * product.quantity,
@@ -29,17 +32,23 @@ const Cart: React.FC = () => {
   );
   return (
     <div className={styles.Cart}>
-      <Sort />
+      {cart.length > 0 && <Sort />}
       <LoadingErrorHandler loading={loading} error={error} />
       {!loading && !error && filteredArr.length > 0 && (
         <CategoryTitle category={category} filteredArr={filteredArr} />
       )}
 
       <div className={styles.CartHeader}>
-        <h3 className={styles.CartTitle}>Товаров в корзине: {productCount}</h3>
-        <h3 className={styles.CartTitle}>На сумму: {totalPrice} руб.</h3>
+        {cart.length > 0 && (
+          <>
+            <h3 className={styles.CartTitle}>
+              Товаров в корзине: {productCount}
+            </h3>
+            <h3 className={styles.CartTitle}>На сумму: {totalPrice} руб.</h3>
+          </>
+        )}
       </div>
-      {!loading && !error && filteredArr.length === 0 && (
+      {cart.length === 0 && (
         <div className={styles.error}>В корзине нет товаров</div>
       )}
       {loading && !error && <div className={styles.loading}>Загрузка...</div>}
@@ -67,8 +76,7 @@ const Cart: React.FC = () => {
             disabled={currentPage === 1}
             onClick={() => paginate(currentPage - 1)}
           >
-            {' '}
-            Назад{' '}
+            <LeftBtn />
           </button>
           <Pagination totalCards={filteredArr.length} />
           <button
@@ -76,7 +84,7 @@ const Cart: React.FC = () => {
             disabled={filteredArr.length <= lastCardIndex}
             onClick={() => paginate(currentPage + 1)}
           >
-            Вперед
+            <RightBtn />
           </button>
         </div>
       ) : (

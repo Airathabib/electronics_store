@@ -9,16 +9,15 @@ import Pagination from '../../features/Pagination';
 import { Sort } from '../../features/Sort/Sort';
 import { CardContextType } from '../../interfaces/interface';
 import { Spin } from 'antd';
-
+import { LeftBtn } from '../../features/LeftBtn';
+import { RightBtn } from '../../features/RightBtn';
 import styles from './index.module.scss';
 
 const CardList: React.FC = () => {
-  const { searchParams, currentPage, firstCardIndex, lastCardIndex, paginate } =
+  const { category, currentPage, firstCardIndex, lastCardIndex, paginate } =
     useContext(CardContext) as CardContextType;
 
   const { error, isLoading, products } = useProductList();
-
-  const category = searchParams.get('category') || '';
 
   // Проверяем наличие продуктов перед фильтрацией
   const { data: filteredArr } = useFilteredList(products || []);
@@ -58,7 +57,7 @@ const CardList: React.FC = () => {
               disabled={currentPage === 1}
               onClick={() => paginate(currentPage - 1)}
             >
-              Назад
+              <LeftBtn />
             </button>
             <Pagination totalCards={filteredArr.length} />
             <button
@@ -66,7 +65,7 @@ const CardList: React.FC = () => {
               disabled={filteredArr.length <= lastCardIndex}
               onClick={() => paginate(currentPage + 1)}
             >
-              Вперед
+              <RightBtn />
             </button>
           </div>
         </>

@@ -40,3 +40,11 @@
     }
   }
 }
+.disabled {
+  pointer-events: none;
+  color: #999;
+}
+
+.Ellipsis {
+  padding: 0 8px;
+}

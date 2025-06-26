@@ -11,9 +11,10 @@
 }
 
 .LogoContainer {
-  min-width: 1440px;
   display: flex;
+  width: 100vw;
   align-items: center;
+  padding-inline: 3rem;
   justify-content: space-between;
 }
 .Logo {
@@ -118,4 +119,10 @@
 .loading {
   font-size: 0.3rem;
   color: var(--purple-800);
+}
+
+@media screen and (max-width: 768px) {
+  .LogoContainer {
+    padding-inline: 1rem;
+  }
 }

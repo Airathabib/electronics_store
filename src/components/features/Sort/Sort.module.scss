@@ -1,11 +1,17 @@
 @import '../../styles/variables/_mixins';
 
 .Sort {
-  width: 100%;
+  width: 100vw;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   gap: 1rem;
+  &Container {
+    padding-inline: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+  }
   &Title {
     @include paragraph3;
   }
@@ -61,5 +67,14 @@
       -ms-transform: scale(1.1);
       -o-transform: scale(1.1);
     }
+  }
+}
+
+@media screen and (max-width: 610px) {
+  .SortContainer {
+    padding-inline: 1rem;
+  }
+  .SortOptions {
+    gap: 0.5rem;
   }
 }

@@ -19,6 +19,7 @@
 }
 .PaginationBtn {
   @include PaginationBtn;
+  padding: 0;
 }
 
 .error {

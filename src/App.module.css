@@ -1,0 +1,238 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+:root {
+  --text-primary: rgba(8, 9, 28, 1);
+  --text-secondary: rgba(8, 9, 28, 0.6);
+  --text-disabled: rgba(8, 9, 28, 0.36);
+  --accent: rgba(151, 71, 255, 1);
+  --accent-hover: rgba(134, 40, 255, 1);
+  --accent-active: rgba(122, 19, 255, 1);
+  --accent-Subdued: rgba(151, 71, 255, 0.06);
+  --accent-SubduedHover: rgba(151, 71, 255, 0.1);
+  --accent-SubduedActive: rgba(151, 71, 255, 0.14);
+  --critical: rgba(229, 69, 69, 1);
+  --criticalHover: rgba(229, 46, 46, 1);
+  --criticalActive: rgba(229, 23, 23, 1);
+  --loader: rgb(93, 225, 11);
+  --link-bg: rgba(188, 239, 196, 0.286);
+  --link-text: rgb(42, 122, 192);
+  --link-loader: rgb(57, 130, 12);
+  --link-hover-bg: rgba(34, 165, 34, 0.718);
+  --bg-grey: rgba(205, 180, 226, 0.9);
+}
+
+:root {
+  --border-secondary: rgba(8, 9, 28, 0.08);
+  --border-primary: rgba(8, 9, 28, 0.12);
+  --border-focus: rgba(8, 9, 28, 1);
+  --border-accent: rgba(151, 71, 255, 1);
+  --border-accentHover: rgba(134, 40, 255, 1);
+  --border-accentActive: rgba(122, 19, 255, 1);
+  --border-critical: rgba(229, 69, 69, 1);
+  --largeRadius: 0.5rem;
+  --mediumRadius: 6px;
+  --smallRadius: 0.25rem;
+}
+
+.inter {
+  font-family: "Inter", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.inter-bold {
+  font-family: "Inter", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+:root {
+  --white-primary: rgba(255, 255, 255, 1);
+  --white-600: rgba(255, 255, 255, 0.88);
+  --white-500: rgba(255, 255, 255, 0.64);
+  --white-400: rgba(255, 255, 255, 0.4);
+  --white-300: rgba(255, 255, 255, 0.14);
+  --white-200: rgba(255, 255, 255, 0.09);
+  --white-100: rgba(255, 255, 255, 0.06);
+}
+
+:root {
+  --black-primary: rgba(8, 9, 28, 1);
+  --black-600: rgba(8, 9, 28, 0.88);
+  --black-500: rgba(8, 9, 28, 0.6);
+  --black-400: rgba(8, 9, 28, 0.36);
+  --black-300: rgba(8, 9, 28, 0.12);
+  --black-200: rgba(8, 9, 28, 0.08);
+  --black-100: rgba(8, 9, 28, 0.04);
+}
+
+:root {
+  --purple-800: rgba(122, 19, 255, 1);
+  --purple-700: rgba(134, 40, 255, 1);
+  --purple-primary: rgba(151, 71, 255, 1);
+  --purple-600: rgba(151, 71, 255, 0.88);
+  --purple-500: rgba(151, 71, 255, 0.6);
+  --purple-400: rgba(151, 71, 255, 0.36);
+  --purple-300: rgba(151, 71, 255, 0.14);
+  --purple-200: rgba(151, 71, 255, 0.1);
+  --purple-100: rgba(151, 71, 255, 0.06);
+}
+
+:root {
+  --red-800: rgba(229, 23, 23, 1);
+  --red-700: rgba(229, 46, 46, 1);
+  --red-primary: rgba(229, 69, 69, 1);
+  --red-600: rgba(229, 69, 69, 0.88);
+  --red-500: rgba(229, 69, 69, 0.6);
+  --red-400: rgba(229, 69, 69, 0.36);
+  --red-300: rgba(229, 69, 69, 0.14);
+  --red-200: rgba(229, 69, 69, 0.1);
+  --red-100: rgba(229, 69, 69, 0.06);
+}
+
+body {
+  max-width: 1440px;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-secondary);
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+.MainContainer {
+  padding-top: 2rem;
+}

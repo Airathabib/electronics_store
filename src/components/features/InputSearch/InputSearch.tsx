@@ -10,7 +10,7 @@ const InputSearch: React.FC = () => {
   ) as CardContextType;
   const debouncedSearch = debounce(
     (e) => handleChangeFilters('q', e.target.value),
-    1000
+    100
   );
   return (
     <Input.Search

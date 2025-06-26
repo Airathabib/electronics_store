@@ -1,0 +1,387 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+.inter {
+  font-family: "Inter", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.inter-bold {
+  font-family: "Inter", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.Card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 20rem;
+  width: 20rem;
+  height: auto;
+  padding: 1.5rem 2rem;
+  border: 2px solid var(--border-primary);
+  box-shadow: 0px -2px 5px var(--black-primary);
+  background-color: var(--white-primary);
+  border-radius: var(--largeRadius);
+  -webkit-border-radius: var(--largeRadius);
+  -moz-border-radius: var(--largeRadius);
+  -ms-border-radius: var(--largeRadius);
+  -o-border-radius: var(--largeRadius);
+  cursor: pointer;
+}
+.CardError {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 20rem;
+  width: 20rem;
+  height: auto;
+  padding: 1.5rem 2rem;
+  border: 2px solid var(--border-critical);
+  box-shadow: 0px -2px 5px var(--border-focus);
+  background-color: var(--bg-primary);
+  border-radius: var(--largeRadius);
+  -webkit-border-radius: var(--largeRadius);
+  -moz-border-radius: var(--largeRadius);
+  -ms-border-radius: var(--largeRadius);
+  -o-border-radius: var(--largeRadius);
+  pointer-events: none;
+  opacity: 0.5;
+}
+.CardSpin {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 20rem;
+  height: auto;
+  width: 20rem;
+  padding: 1.5rem 2rem;
+  border: 2px solid var(--border-primary);
+  box-shadow: 0px -2px 5px var(--black-primary);
+  background-color: var(--bg-primary);
+  border-radius: var(--largeRadius);
+  -webkit-border-radius: var(--largeRadius);
+  -moz-border-radius: var(--largeRadius);
+  -ms-border-radius: var(--largeRadius);
+  -o-border-radius: var(--largeRadius);
+  pointer-events: none;
+  opacity: 0.5;
+  background-color: red;
+}
+.CardId {
+  font-family: "Inter";
+  font-weight: medium;
+  font-size: 1rem;
+  word-spacing: 0.5rem;
+}
+.CardTitle {
+  font-family: "Inter";
+  font-weight: bold;
+  font-size: 1.5rem;
+  word-spacing: 0.5rem;
+  color: var(--black-600);
+}
+.CardBrand {
+  font-family: "Inter";
+  font-weight: bold;
+  font-size: 1rem;
+  word-spacing: 0.5rem;
+}
+.CardDescr {
+  font-weight: normal;
+  font-family: "Inter";
+  font-size: 1rem;
+  word-spacing: 0.5rem;
+  color: var(--black-600);
+  display: -webkit-box;
+  line-clamp: 3;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.CardPrice {
+  font-family: "Inter";
+  font-weight: medium;
+  font-size: 1rem;
+  word-spacing: 0.5rem;
+  color: var(--black-600);
+  font-weight: 700;
+}
+.CardDate {
+  font-family: "Inter";
+  font-weight: medium;
+  font-size: 1rem;
+  word-spacing: 0.5rem;
+}
+.CardTime {
+  font-family: "Inter";
+  font-weight: medium;
+  font-size: 1rem;
+  word-spacing: 0.5rem;
+}
+.CardRating {
+  font-family: "Inter";
+  font-weight: medium;
+  font-size: 1rem;
+  word-spacing: 0.5rem;
+}
+.CardImage {
+  display: block;
+  width: 12.5rem;
+  margin-top: auto;
+  height: 12.5rem;
+}
+.CardQuantity {
+  font-family: "Inter";
+  font-weight: medium;
+  font-size: 1rem;
+  word-spacing: 0.5rem;
+  color: var(--black-600);
+}
+.CardQuantityError {
+  font-family: "Inter";
+  font-weight: medium;
+  font-size: 1rem;
+  word-spacing: 0.5rem;
+  color: var(--criticalActive);
+}
+.CardButtonWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.CardBtnEdit {
+  border: none;
+  fill: transparent;
+  background-color: transparent;
+  cursor: pointer;
+  transition: color 0.3s ease, fill 0.3s ease;
+  -webkit-transition: color 0.3s ease, fill 0.3s ease;
+  -moz-transition: color 0.3s ease, fill 0.3s ease;
+  -ms-transition: color 0.3s ease, fill 0.3s ease;
+  -o-transition: color 0.3s ease, fill 0.3s ease;
+}
+.CardBtnEdit:hover {
+  color: var(--red-700);
+}
+.CardBtnEditActive {
+  border: none;
+  fill: transparent;
+  background-color: transparent;
+  cursor: pointer;
+  transition: color 0.3s ease, fill 0.3s ease;
+  -webkit-transition: color 0.3s ease, fill 0.3s ease;
+  -moz-transition: color 0.3s ease, fill 0.3s ease;
+  -ms-transition: color 0.3s ease, fill 0.3s ease;
+  -o-transition: color 0.3s ease, fill 0.3s ease;
+  color: var(--red-700);
+  fill: var(--red-700);
+}
+.CardQuantityWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+.CardCounter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.CardCounterBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  border: 1px solid var(--purple-300);
+  background-color: var(--purple-200);
+  border-radius: var(--smallRadius);
+  -webkit-border-radius: var(--smallRadius);
+  -moz-border-radius: var(--smallRadius);
+  -ms-border-radius: var(--smallRadius);
+  -o-border-radius: var(--smallRadius);
+  cursor: pointer;
+  transition: color 0.3s ease, background0-color, 0.3s ease;
+  -webkit-transition: color 0.3s ease, background0-color, 0.3s ease;
+  -moz-transition: color 0.3s ease, background0-color, 0.3s ease;
+  -ms-transition: color 0.3s ease, background0-color, 0.3s ease;
+  -o-transition: color 0.3s ease, background0-color, 0.3s ease;
+}
+.CardCounterBtn:hover {
+  color: var(--link-text);
+  background-color: var(--purple-400);
+}
+.CardCounterCount {
+  font-family: "Inter";
+  font-weight: medium;
+  font-size: 1.125rem;
+  word-spacing: 0.5rem;
+  color: var(--black-600);
+}
+.CardBtnAddtocart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.CardBtnAddtocart:hover {
+  color: var(--accent-active);
+}
+
+.Form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.5rem;
+  background-color: var(--purple-300);
+}
+.FormLabel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.FormLabelTitle {
+  font-weight: normal;
+  font-family: "Inter";
+  font-size: 1rem;
+  word-spacing: 0.5rem;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid var(--black-primary);
+}
+.FormLabelDescr {
+  font-weight: normal;
+  font-family: "Inter";
+  font-size: 1rem;
+  word-spacing: 0.5rem;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid var(--black-primary);
+}
+.FormLabelPhoto {
+  font-weight: normal;
+  font-family: "Inter";
+  font-size: 1rem;
+  word-spacing: 0.5rem;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid var(--black-primary);
+}
+.FormBtn {
+  height: 2.5rem;
+  font-family: "Inter";
+  font-weight: medium;
+  font-size: 1rem;
+  word-spacing: 0.5rem;
+  border: none;
+  color: var(--white-primary);
+  border-radius: var(--mediumRadius);
+  -webkit-border-radius: var(--mediumRadius);
+  -moz-border-radius: var(--mediumRadius);
+  -ms-border-radius: var(--mediumRadius);
+  -o-border-radius: var(--mediumRadius);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  -webkit-transition: background-color 0.3s ease, color 0.3s ease;
+  -moz-transition: background-color 0.3s ease, color 0.3s ease;
+  -ms-transition: background-color 0.3s ease, color 0.3s ease;
+  -o-transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: var(--red-primary);
+  color: var(--white-primary);
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-out;
+  -webkit-transition: background-color 0.3s ease-in-out, color 0.3s ease-out;
+  -moz-transition: background-color 0.3s ease-in-out, color 0.3s ease-out;
+  -ms-transition: background-color 0.3s ease-in-out, color 0.3s ease-out;
+  -o-transition: background-color 0.3s ease-in-out, color 0.3s ease-out;
+}
+.FormBtn:hover {
+  background-color: var(--red-700);
+  color: var(--white-500);
+  cursor: pointer;
+}
+
+.CardBtnMore {
+  width: 60%;
+  text-align: center;
+  font-weight: normal;
+  font-family: "Inter";
+  font-size: 1rem;
+  word-spacing: 0.5rem;
+  color: var(--link-text);
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  background-color: var(--link-bg);
+  text-decoration: none;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  -webkit-transition: color 0.3s ease, background-color 0.3s ease;
+  -moz-transition: color 0.3s ease, background-color 0.3s ease;
+  -ms-transition: color 0.3s ease, background-color 0.3s ease;
+  -o-transition: color 0.3s ease, background-color 0.3s ease;
+  border-radius: var(--largeRadius);
+  -webkit-border-radius: var(--largeRadius);
+  -moz-border-radius: var(--largeRadius);
+  -ms-border-radius: var(--largeRadius);
+  -o-border-radius: var(--largeRadius);
+}
+.CardBtnMore:hover {
+  color: var(--purple-800);
+  background-color: transparent;
+  border-color: transparent;
+}
+.CardBtnMoreActive {
+  border: none;
+  fill: transparent;
+  background-color: transparent;
+  cursor: pointer;
+  transition: color 0.3s ease, fill 0.3s ease;
+  -webkit-transition: color 0.3s ease, fill 0.3s ease;
+  -moz-transition: color 0.3s ease, fill 0.3s ease;
+  -ms-transition: color 0.3s ease, fill 0.3s ease;
+  -o-transition: color 0.3s ease, fill 0.3s ease;
+  color: var(--link-hover);
+  fill: var(--link-hover);
+}
+
+.error {
+  font-family: "Inter";
+  font-weight: medium;
+  font-size: 0.625rem;
+  word-spacing: 0.25rem;
+  color: var(--red-primary);
+  text-transform: lowercase;
+}
+
+.InputLabel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-family: "Inter";
+  font-weight: bold;
+  font-size: 1.125rem;
+  word-spacing: 0.5rem;
+  color: var(--black-400);
+}
+
+.InputDate {
+  font-family: "Inter";
+  font-weight: normal;
+  font-size: 0.75rem;
+  word-spacing: 0.25rem;
+  color: var(--black-600);
+  background-color: transparent;
+  border: none;
+  pointer-events: none;
+}

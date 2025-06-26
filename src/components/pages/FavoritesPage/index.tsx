@@ -8,9 +8,11 @@ import CategoryTitle from '../../features/CategoryTitle';
 import Pagination from '../../features/Pagination';
 import { Sort } from '../../features/Sort/Sort';
 import { CardContextType } from '../../interfaces/interface';
+import { LeftBtn } from '../../features/LeftBtn';
+import { RightBtn } from '../../features/RightBtn';
+import { Spin } from 'antd';
 
 import styles from './index.module.scss';
-import { Spin } from 'antd';
 
 const Favorites: React.FC = () => {
   const { error, isLoading, products } = useProductList();
@@ -56,8 +58,7 @@ const Favorites: React.FC = () => {
             disabled={currentPage === 1}
             onClick={() => paginate(currentPage - 1)}
           >
-            {' '}
-            Назад{' '}
+            <LeftBtn />
           </button>
           <Pagination totalCards={filteredArr.length} />
           <button
@@ -65,7 +66,7 @@ const Favorites: React.FC = () => {
             disabled={filteredArr.length <= lastCardIndex}
             onClick={() => paginate(currentPage + 1)}
           >
-            Вперед
+            <RightBtn />
           </button>
         </div>
       ) : (

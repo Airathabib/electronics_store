@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+.inter {
+  font-family: "Inter", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.inter-bold {
+  font-family: "Inter", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.Admin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 3rem;
+}
+.AdminTitle {
+  font-family: "Inter";
+  font-weight: bold;
+  font-size: 2rem;
+  word-spacing: 0.5rem;
+  color: var(--black-500);
+}
+
+.Form {
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3rem;
+}
+
+.FormItem {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 0.5rem;
+}
+
+.FormItem label {
+  width: 100%;
+  text-align: left;
+  margin-bottom: 0.5rem;
+}
+
+.Input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.Button {
+  width: 20%;
+}
+
+@media (max-width: 768px) {
+  .Form {
+    width: 90vw;
+  }
+}

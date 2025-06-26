@@ -17,7 +17,7 @@
 @mixin titleH1 {
   font-family: 'Inter';
   font-weight: bold;
-  font-size: 2.25rem;
+  font-size: clamp(1.2rem, 0.9rem + 0.9375vw, 2.3rem);
   word-spacing: 0.5rem;
 }
 
