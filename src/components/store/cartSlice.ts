@@ -167,44 +167,11 @@ export const updateProductCart = createAsyncThunk<
   }
 });
 
-export const toggleLikeCard = createAsyncThunk<
-  Cart,
-  string,
-  { rejectValue: string; state: RootState; dispatch: AppDispatch }
->('cart/toggleLike', async (id, { rejectWithValue, getState, dispatch }) => {
-  try {
-    const state = getState();
-    const product = state.cart.cart.find((p) => p.id === id);
-    if (!product) throw new Error('Продукт не найден');
-
-    const response = await fetch(`${CART_URL}/${id}`, {
-      method: 'PATCH',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ like: !product.like }),
-    });
-
-    if (!response.ok) throw new Error('Ошибка обновления лайка');
-
-    const updatedProduct = await response.json();
-    dispatch(toggleLike({ id, like: updatedProduct.like }));
-
-    return updatedProduct;
-  } catch (error) {
-    return rejectWithValue(
-      error instanceof Error ? error.message : 'Unknown error'
-    );
-  }
-});
-
 // Слайс
 const cartSlice = createSlice({
   name: 'cart',
   initialState,
   reducers: {
-    toggleLike(state, action: PayloadAction<{ id: string; like: boolean }>) {
-      const product = state.cart.find((p) => p.id === action.payload.id);
-      if (product) product.like = action.payload.like;
-    },
     removeProductFromCart(state, action: PayloadAction<string>) {
       state.cart = state.cart.filter((p) => p.id !== action.payload);
     },
@@ -255,5 +222,5 @@ const cartSlice = createSlice({
   },
 });
 
-export const { toggleLike, removeProductFromCart } = cartSlice.actions;
+export const { removeProductFromCart } = cartSlice.actions;
 export default cartSlice.reducer;
