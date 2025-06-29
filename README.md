@@ -1,50 +1,106 @@
-# React + TypeScript + Vite
+# 🛒 Интернет-магазин электроники
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Простой и современный интернет-магазин товаров на базе React с использованием TypeScript, SCSS, Redux Toolkit, RTK Query и JSON Server.
 
-Currently, two official plugins are available:
+## 🧰 Технологии
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React** + **TypeScript**
+- **Vite** — сборщик проекта
+- **SCSS** — стилизация
+- **Ant Design (antd)** — UI-компоненты
+- **Redux Toolkit (RTK Query)** — управление состоянием и запросами к API
+- **JSON Server** — mock backend
+- **Lodash** — утилиты для работы с данными
+- **Concurrently** — запуск нескольких команд одновременно
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## 📦 Установка
 
-- Configure the top-level `parserOptions` property like this:
+1. Клонируйте репозиторий:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```bash
+git clone https://github.com/Airathabib/electronics_store.git
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+2. Перейдите в папку проекта:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```bash
+cd electronics_store
 ```
+
+3. Установите зависимости:
+
+```bash
+npm install
+```
+
+---
+
+## ▶️ Запуск приложения
+
+Запустите проект в режиме разработки:
+
+```bash
+npm run dev
+```
+
+Приложение будет доступно по адресу [http://localhost:5173](http://localhost:5173)
+
+> ⚠️ JSON Server автоматически запускается вместе с Vite благодаря `concurrently`.
+
+---
+
+## 🗂️ Структура проекта
+
+```
+src/
+├── assets/                # Изображения и статические файлы
+├── components/            # Переиспользуемые компоненты
+├── features/              # Фичи приложения (например, комментарии, модальное окно)
+├── pages/                 # Страницы  (например,Избранное, Корзина )
+├── store/                 # Redux Store и слайсы
+├── handlers/              # Вспомогательные функции (hooks, helpers)
+├── App.tsx                # Главный компонент
+└── main.tsx               # Точка входа
+```
+
+---
+
+## 💡 Основные возможности
+
+- Просмотр списка товаров
+- Поиск и фильтрация по категориям
+- Детальная страница товара
+- Корзина покупок
+- Поддержка Redux для управления состоянием
+- RTK Query для работы с API
+- Адаптивный дизайн под мобильные устройства
+
+---
+
+## 🛠️ Дополнительные команды
+
+| Команда           | Описание                      |
+| ----------------- | ----------------------------- |
+| `npm run dev`     | Запуск локального сервера     |
+| `npm run build`   | Сборка production версии      |
+| `npm run preview` | Предпросмотр собранной версии |
+| `npm run lint`    | Проверка кода через ESLint    |
+
+---
+
+## 📝 Линтер и стиль кодирования
+
+Проект использует **ESLint** с поддержкой TypeScript и React. Настройки взяты из официальных рекомендаций:
+
+- `@typescript-eslint/eslint-plugin`
+- `eslint-plugin-react`
+- `tseslint.configs.recommendedTypeChecked`
+
+---
+
+## 🤝 Автор
+
+**AiratHabib**  
+GitHub: [https://github.com/Airathabib](https://github.com/Airathabib)
