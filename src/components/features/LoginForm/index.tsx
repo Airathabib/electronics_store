@@ -1,4 +1,4 @@
-import { Button, Form, Input, Spin, Typography } from 'antd';
+import { Button, Form, Input, Spin } from 'antd';
 import React, { useContext, useEffect } from 'react';
 import {
   useAppDispatch,
@@ -28,6 +28,7 @@ const LoginForm: React.FC = () => {
       form.resetFields();
     }
   }, [error]);
+
   // Отправка формы
   const handleSubmit = async (values: UserType) => {
     if (values.email) {
@@ -43,16 +44,33 @@ const LoginForm: React.FC = () => {
     return Promise.reject('Неверный формат email');
   };
 
+  const validatePhone = (_: any, value: string | undefined) => {
+    if (typeof value === 'undefined' || value.trim() === '') {
+      return Promise.resolve(); // Или Promise.reject('Поле обязательно для заполнения')
+    }
+
+    const cleanedValue = value.replace(/[^\d+]/g, '');
+
+    if (cleanedValue.length < 10 || cleanedValue.length > 12) {
+      return Promise.reject('Номер должен содержать 10-12 цифр');
+    }
+
+    if (!/^(\+7|8)/.test(cleanedValue)) {
+      return Promise.reject('Номер должен начинаться с +7 или 8');
+    }
+
+    return Promise.resolve();
+  };
+
   return (
     <div className={styles.LoginForm}>
       <Spin spinning={loading} tip='Загрузка...'>
-        <Typography.Text className={styles.error}>{error}</Typography.Text>
+        <h3 className={styles.error}>{error}</h3>
         {user ? (
           <div className={styles.UserWrapper}>
             <h3 className={styles.success}>{user?.login} Вы вошли в аккаунт</h3>
             <div className={styles.AdminWrapper}>
               <Link className={styles.AdminWrapperLink} to='./admin'>
-                {' '}
                 Перейти на страницу администрирования
               </Link>
             </div>
@@ -96,7 +114,7 @@ const LoginForm: React.FC = () => {
                       {
                         required: true,
                         type: 'email',
-                        message: '',
+                        message: 'Введите email',
                       },
                       { validator: validateEmail },
                     ]}
@@ -104,21 +122,36 @@ const LoginForm: React.FC = () => {
                     <Input placeholder='Email' />
                   </Form.Item>
 
-                  <Form.Item name='phone'>
-                    <Input placeholder='Телефон' />
+                  <Form.Item
+                    name='phone'
+                    rules={[
+                      {
+                        required: true,
+                        message: 'Телефон обязателен для заполнения',
+                      },
+                      {
+                        validator: validatePhone,
+                      },
+                    ]}
+                  >
+                    <Input placeholder='+7 (XXX) XXX-XX-XX' />
                   </Form.Item>
                 </>
               )}
+
               <div className={styles.ButtonContainer}>
                 <Button type='primary' htmlType='submit'>
                   {openRegistration ? 'Зарегистрироваться' : 'Войти'}
                 </Button>
 
-                {!openRegistration && (
-                  <Button
-                    onClick={() => setOpenRegistration(!openRegistration)}
-                  >
-                    {openRegistration ? 'Войти' : 'Создать аккаунт'}
+                {/* Кнопка "Назад" */}
+                {openRegistration ? (
+                  <Button onClick={() => setOpenRegistration(false)}>
+                    Назад
+                  </Button>
+                ) : (
+                  <Button onClick={() => setOpenRegistration(true)}>
+                    Создать аккаунт
                   </Button>
                 )}
               </div>
